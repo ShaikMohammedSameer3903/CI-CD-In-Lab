@@ -30,6 +30,8 @@ jobs:
           if [ -f package.json ] && grep -q "test" package.json; then npm test -- --watchAll=false || true; else echo "no test script"; fi
 
       - name: Build
+        env:
+          VITE_BASE: '/ShaikMohammedSameer3903/CI-CD-In-Lab/'
         run: npm run build
 
       - name: Upload build artifact
