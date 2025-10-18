@@ -29,6 +29,8 @@ jobs:
         run: npm test --if-present
 
       - name: Build the project
+        env:
+          VITE_BASE: '/ShaikMohammedSameer3903/CI-CD-In-Lab/'
         run: npm run build
 
       # Configure Git identity
@@ -45,4 +47,4 @@ jobs:
           git config --global user.name "ShaikMohammedSameer3903"
           git config --global user.email "2300030621@kluniversity.in"
           npm install -g gh-pages
-          gh-pages -d dist -r https://x-access-token:${GITHUB_TOKEN}@github.com/ShaikMohammedSameer3903/s111-skill3.git
+          gh-pages -d dist -r https://x-access-token:${GITHUB_TOKEN}@github.com/ShaikMohammedSameer3903/CI-CD-In-Lab.git
