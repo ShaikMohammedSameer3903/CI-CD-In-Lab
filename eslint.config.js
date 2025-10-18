@@ -6,6 +6,15 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
   globalIgnores(['dist']),
+  // Treat config files (vite, build scripts, etc.) as Node environment
+  {
+    files: ['vite.config.*', '*.config.*', 'scripts/**', '.github/**'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      globals: globals.node,
+      parserOptions: { sourceType: 'module' },
+    },
+  },
   {
     files: ['**/*.{js,jsx}'],
     extends: [
