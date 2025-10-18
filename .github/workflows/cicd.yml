@@ -30,7 +30,7 @@ jobs:
 
       - name: Build the project
         env:
-          VITE_BASE: '/CI-CD-In-Lab/'
+          VITE_BASE: './'
         run: npm run build
 
       # Configure Git identity
