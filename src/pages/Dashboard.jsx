@@ -11,7 +11,7 @@ export default function Dashboard() {
     const uname = localStorage.getItem("username");
     if (!token) navigate("/");
     else setUsername(uname);
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="dashboard-grid">
